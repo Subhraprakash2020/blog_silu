@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Doing some demo text changes to practice
+ - creating branch
+ - raising Pull Request
