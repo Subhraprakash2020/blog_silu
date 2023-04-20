@@ -18,7 +18,8 @@
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, id:"content-field",style:"height: 100px",class:"form-control" %>
+    <p><span id="char-count">0</span> characters</p>
   </div>
 
   <div>
