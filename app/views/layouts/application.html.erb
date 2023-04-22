@@ -11,7 +11,19 @@
   </head>
 
   <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <header>
+      <ul>
+        <li><%= link_to 'Blogs', posts_path %></li>
+        <li>
+          <% if current_user %>
+            <%= button_to 'logout', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Sign In', new_user_session_path, method: :delete %>
+          <% end %>
+        </li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
