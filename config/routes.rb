@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :tags
   resources :categories
   resources :posts
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
 
   # Defines the root path route ("/")
-  root "posts#index"
+  get 'home/index'
+  root "home#index"
 end
