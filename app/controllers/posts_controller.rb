@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @tags = Tag.all.map { |tags| [tags.name, tags.id] }
+    @categories = Category.all.map { |category| [category.name, category.id] }
   end
 
   # POST /posts or /posts.json
@@ -55,6 +56,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -62,6 +64,6 @@ class PostsController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, tag_ids: [])
+      params.require(:post).permit(:title, :content, tag_ids: [], category_ids: [])
     end
 end
