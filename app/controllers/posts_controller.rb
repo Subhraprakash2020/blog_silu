@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all.map { |category| [category.name, category.id] }
   end
 
   # POST /posts or /posts.json
@@ -65,6 +66,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, category_ids: [])
     end
 end

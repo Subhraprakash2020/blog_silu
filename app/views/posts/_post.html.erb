@@ -8,5 +8,9 @@
     <strong>Content:</strong>
     <%= post.content %>
   </p>
+  <p>
+  <strong>categories:</strong>
+  <%= post.categories.map(&:name) %>
+  </p>
 
 </div>
