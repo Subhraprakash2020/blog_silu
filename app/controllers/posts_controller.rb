@@ -18,15 +18,11 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @tags = Tag.all.map { |tags| [tags.name, tags.id] }
-
   end
 
   # POST /posts or /posts.json
   def create
-    
-    
     @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -37,7 +33,6 @@ class PostsController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
@@ -60,13 +55,11 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
     end
-
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :content, tag_ids: [])

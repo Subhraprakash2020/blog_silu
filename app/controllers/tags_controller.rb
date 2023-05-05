@@ -22,7 +22,6 @@ class TagsController < ApplicationController
   # POST /tags or /tags.json
   def create
     @tag = Tag.new(tag_params)
-
     respond_to do |format|
       if @tag.save
         format.html { redirect_to tag_url(@tag), notice: "Tag was successfully created." }
