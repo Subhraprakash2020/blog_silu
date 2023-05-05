@@ -22,7 +22,23 @@
     <p><span id="char-count">0</span> characters</p>
   </div>
 
+ 
+ <div>
+    <%= form.label :tags, style: "display: block" %>
+    <%= form.select :tag_ids, Tag.all.map{|t| [t.name, t.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select' } %>
+  </div> 
+
+
+
   <div>
     <%= form.submit %>
   </div>
+
+  <script>
+   $(".mul-select").select({
+      placeholder: "select Option",
+      tags: true,
+    });
+
+</script>
 <% end %>

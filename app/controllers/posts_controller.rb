@@ -17,10 +17,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @tags = Tag.all.map { |tags| [tags.name, tags.id] }
+
   end
 
   # POST /posts or /posts.json
   def create
+    
+    
     @post = Post.new(post_params)
 
     respond_to do |format|
@@ -65,6 +69,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, tag_ids: [])
     end
 end

@@ -8,5 +8,9 @@
     <strong>Content:</strong>
     <%= post.content %>
   </p>
+  <p>
+   <strong>tags:</strong>
+   <%= post.tags.map(&:name) %>
+  </p>
 
 </div>
