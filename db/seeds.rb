@@ -3,5 +3,17 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+
+tags = Tag.create([{
+	name: "Authenitcation"
+}, {
+	name: "Authorization"
+}])
+
+categories = Category.create([{
+	name: "Technology"
+}, {
+	name: "Science Fiction"
+}, {
+	name: "Science Fiction"
+}])

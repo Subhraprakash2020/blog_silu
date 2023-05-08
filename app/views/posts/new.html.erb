@@ -8,15 +8,18 @@
   <%= link_to "Back to posts", posts_path %>
 </div>
 
+<div>
+  <%= form.leble :tags %>
+  <%= form.text_area :tags %>
+<div>
 
 <script>
-var content_field = $('#content-field');
-var char_count = $('#char-count');
+  var content_field = $('#content-field');
+  var char_count = $('#char-count');
 
- 
-content_field.on('input',function(){
+  content_field.on('input', function(){
     var con = content_field.val();
     char_count.text(con.length);
-})
+  });
 
 </script>
