@@ -23,6 +23,12 @@
   </div>
 
   <div>
+    <%= form.label :categories, style: "display: block" %>
+    <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select' } %>
+  </div>
+
+
+  <div>
     <%= form.label :tags, style: "display: block" %>
     <%= form.select :tag_ids, Tag.all.map{|t| [t.name, t.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select' } %>
   </div>
@@ -38,10 +44,10 @@
 <% end %>
 
 <script>
-   $(".mul-select").select({
+  $(document).ready(function() {
+      $(".mul-select").select2({
           placeholder: "select Option",
           tags: true,
         });
-
+    });
 </script>
-
