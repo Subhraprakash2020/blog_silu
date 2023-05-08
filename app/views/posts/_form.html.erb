@@ -11,35 +11,32 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content, id: "content-field", style: "height: 100px", class: "form-control" %>
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content, id: "content-field", class: "form-control", rows: '15' %>
     <p><span id="char-count">0</span> characters</p>
   </div>
 
-  <div>
-    <%= form.label :categories, style: "display: block" %>
-    <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select' } %>
+<div class="row">
+
+  <div class="mb-3 col-sm-6">
+    <%= form.label :tags, class: 'form-label' %>
+    <%= form.select :tag_ids, Tag.all.map{|t| [t.name, t.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
   </div>
 
-
-  <div>
-    <%= form.label :tags, style: "display: block" %>
-    <%= form.select :tag_ids, Tag.all.map{|t| [t.name, t.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select' } %>
+  <div class="mb-3 col-sm-6">
+    <%= form.label :categories, class: 'form-label' %>
+    <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
   </div>
+</div>
 
-  <div>
-    <%= form.label :categories, style: "display: block" %>
-    <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select' } %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit "Save", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
