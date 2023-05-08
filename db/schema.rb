@@ -30,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_069998) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.integer "tag_id"
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
