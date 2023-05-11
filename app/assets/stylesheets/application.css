@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-button{
+
+button {
   background-color: white;
   border: none;
   color: blue;
