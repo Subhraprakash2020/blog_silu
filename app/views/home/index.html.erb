@@ -1,1 +1,41 @@
-<h1>Welcome to Blog Home page</h1>
+<h1>Welcome to Silu's Blog</h1>
+
+<div class="lead">
+  <p>
+    Hi I am silu, I am a web developer, I love to code and I love to learn new things.
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <% if current_user %>
+      <%= link_to "Create a new blog post", new_post_path %>
+    <% else %>
+      <div>
+        Please
+        <%= link_to "Sign up", new_user_registration_path %>
+        or
+        <%= link_to "Sign in", new_user_session_path %>
+        to create a new blog post
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+
+    <% if @posts.empty? %>
+      <p>There are no posts yet.</p>
+    <% else %>
+      <h3> Latest Posts </h3>
+
+      <% @posts.each do |post| %>
+        <h2><%= link_to post.title, post_path(post) %></h2>
+        <p><%= post.content.truncate(120) %></p>
+        <p><%= link_to "Read more", post_path(post) %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

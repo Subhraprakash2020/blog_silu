@@ -9,14 +9,19 @@
     <%= post.content %>
   </p>
 
-  <p>
-   <strong>tags:</strong>
-   <%= post.tags.map(&:name) %>
-  </p>
+  <% if post.tags.any? %>
+    <p>
+      <strong>Tags:</strong>
+      <%= post.tags.map(&:name).join(', ') %>
+    </p>
 
+  <% end %>
+
+  <% if post.categories.any? %>
   <p>
     <strong>Categories:</strong>
-    <%= post.categories.map(&:name) %>
+    <%= post.categories.map(&:name).join(', ') %>
   </p>
 
+  <% end %>
 </div>
