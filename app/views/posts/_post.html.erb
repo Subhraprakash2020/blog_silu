@@ -1,26 +1,24 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Title:</strong>
-    <%= post.title %>
+    <strong><%= post.title %></strong>
+    
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong></strong>
     <%= post.content %>
   </p>
 
   <% if post.tags.any? %>
     <p>
-      <strong>Tags:</strong>
-      <%= post.tags.map(&:name).join(', ') %>
+      <button class= 'btn btn-secondary'><%= post.tags.map(&:name).join(', ') %></button>
     </p>
 
   <% end %>
 
   <% if post.categories.any? %>
   <p>
-    <strong>Categories:</strong>
-    <%= post.categories.map(&:name).join(', ') %>
+      <button class= 'btn btn-secondary'><%= post.categories.map(&:name).join(', ') %></button>
   </p>
 
   <% end %>

@@ -2,9 +2,8 @@
 
 <%= render @post %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
+<div class = "edit_button">
   <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <%= link_to "Edit", edit_post_path(@post),class: 'btn btn-primary' %> 
+  <%= button_to "Delete", @post, method: :delete,class:'btn btn-danger' %>
 </div>

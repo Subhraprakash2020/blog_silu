@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.last(5)
+    @posts = Post.published.last(5)
   end
 end

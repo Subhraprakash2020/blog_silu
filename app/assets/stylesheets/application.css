@@ -19,3 +19,11 @@ button {
   border: none;
   color: blue;
 }
+.edit_button{
+  float: right;
+  display: flex;
+}
+.btn{
+  margin-right: 5px;
+  margin-left: 10px;
+}

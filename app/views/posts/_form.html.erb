@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="mb-3">
     <%= form.label :title, class: 'form-label' %>
@@ -22,22 +23,29 @@
     <p><span id="char-count">0</span> characters</p>
   </div>
 
-<div class="row">
+  <div class="row">
 
-  <div class="mb-3 col-sm-6">
-    <%= form.label :tags, class: 'form-label' %>
-    <%= form.select :tag_ids, Tag.all.map{|t| [t.name, t.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
-  </div>
+    <div class="mb-3 col-sm-6">
+      <%= form.label :tags, class: 'form-label' %>
+      <%= form.select :tag_ids, Tag.all.map{|t| [t.name, t.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
+    </div>
 
-  <div class="mb-3 col-sm-6">
-    <%= form.label :categories, class: 'form-label' %>
-    <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
+    <div class="mb-3 col-sm-6">
+      <%= form.label :categories, class: 'form-label' %>
+      <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
+    </div>
   </div>
-</div>
 
   <div class="mb-3">
     <%= form.submit "Save", class: 'btn btn-primary' %>
   </div>
+<% end %>
+
+<% if !post.new_record? %>
+  <%= form_with(model: post, url: publish_post_path(post), method: :patch) do |form|%>
+    <%#= form.hidden_field :publish %>
+    <%= form.submit "Publish", class: 'btn btn-success', style:"float: right";%>
+  <% end %>
 <% end %>
 
 <script>
