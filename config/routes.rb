@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :categories
   resources :posts
   devise_for :users
+  resources :posts do
+    member do
+      patch :publish
+    end
+  end
 
   # Defines the root path route ("/")
   get 'home/index'
