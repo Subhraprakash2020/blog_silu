@@ -26,9 +26,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    if current_user
-      @post.user_id == current_user.id
-    end
+   
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created."}
@@ -88,6 +86,6 @@ class PostsController < ApplicationController
   end
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :content,:user_id, tag_ids: [], category_ids: [])
+    params.require(:post).permit(:title, :content, :user_id, tag_ids: [], category_ids: [])
   end
 end
