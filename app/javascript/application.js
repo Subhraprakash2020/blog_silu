@@ -1,8 +1,10 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
-$(".mul-select").select({
-   placeholder: "select Option",
-   tags: true,
- });
+import "@hotwired/turbo-rails";
+import "controllers";
+import "trix";
+import "@rails/actiontext";
 
+$(".mul-select").select({
+  placeholder: "select Option",
+  tags: true,
+});
