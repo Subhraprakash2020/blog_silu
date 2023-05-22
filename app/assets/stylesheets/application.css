@@ -27,3 +27,12 @@ button {
   margin-right: 5px;
   margin-left: 10px;
 }
+trix-editor img {
+  max-width: 50%;
+  height: auto;
+  float: right;
+}
+#content-field{
+  height: 500px !important;
+  overflow: auto;
+}

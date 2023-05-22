@@ -32,3 +32,6 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+.form-control{
+  height: 40rem;
+}

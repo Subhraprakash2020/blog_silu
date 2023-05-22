@@ -35,6 +35,9 @@
       <%= form.select :category_ids, Category.all.map{|c| [c.name, c.id]}, { include_blank: true }, { multiple: 'multiple', class: 'mul-select form-control' } %>
     </div>
   </div>
+  <div class="field">
+    <%= form.file_field :photo %>
+  </div>
 
   <div class="mb-3">
     <%= form.submit "Save", class: 'btn btn-primary' %>
