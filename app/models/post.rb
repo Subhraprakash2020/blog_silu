@@ -12,5 +12,5 @@ class Post < ApplicationRecord
   # def self.published
   #   where(published: true)
   # end
-  has_one_attached :photo, service: :s3
+  has_one_attached :photo
 end

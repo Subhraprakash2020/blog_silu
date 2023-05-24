@@ -10,7 +10,7 @@ amazon:
   service: S3
   access_key_id: AKIA3UHEM63P642XWXVW
   secret_access_key: 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
-  region: Asia Pacific (Mumbai) ap-south-1
+  region: ap-south-1
   bucket: ruby-on-rails-blogsilu
 # Remember not to checkin your GCS keyfile to a repository
 # google:
