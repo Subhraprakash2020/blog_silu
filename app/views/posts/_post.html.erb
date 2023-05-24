@@ -3,10 +3,9 @@
     <strong><%= post.title %></strong>
   </p>
   <p>
-    <strong></strong>
     <%= raw(post.content)%>
   </p>
-
+  
   <% if post.tags.any? %>
     <p>
       <button class= 'btn btn-secondary'><%= post.tags.map(&:name).join(', ') %></button>
