@@ -19,11 +19,11 @@ button {
   border: none;
   color: blue;
 }
-.edit_button{
+.edit_button {
   float: right;
   display: flex;
 }
-.btn{
+.btn {
   margin-right: 5px;
   margin-left: 10px;
 }
@@ -32,7 +32,7 @@ trix-editor img {
   height: auto;
   float: right;
 }
-#content-field{
+#content-field {
   height: 500px !important;
   overflow: auto;
 }
