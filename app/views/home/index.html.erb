@@ -30,7 +30,7 @@
       <h3> Latest Posts </h3>
       <% @posts.each do |post| %>
         <h2><%= link_to post.title, post_path(post) %></h2>
-        <p><%= post.content.truncate(120) %></p>
+        <p><%= raw(post.content.truncate(120)) %></p>
         <p><%= link_to "Read more", post_path(post) %></p>
       <% end %>
     <% end %>
